@@ -23,4 +23,12 @@
 .AppCol2 {
   width: 420px;
   background-color: rgb(0, 0, 0);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+
+.AppCol1-inner_wrapper {
+  padding: 64px;
 }

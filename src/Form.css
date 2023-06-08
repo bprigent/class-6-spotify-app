@@ -1,0 +1,17 @@
+.formWrapper {
+    padding: 24px;
+}
+
+.form-text-input {
+    height: 44px;
+    padding: 12px;
+    width: 344px;
+    margin-right: 12px;
+    border-radius: 4px;
+    border: 1px solid #ffffff;
+    background-color: #000000;
+}
+
+.form-button-input {
+    padding: 8px;
+}

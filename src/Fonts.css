@@ -1,0 +1,19 @@
+.font-H1 {
+    font-size: 38px;
+    font-weight: regular;
+    color: #ffffff;
+    font-weight: 300;
+    padding: 0px;
+    margin: 0px;
+    line-height: 130%;
+}
+
+.font-H2 {
+    font-size: 22px;
+    font-weight: regular;
+    color: #ffffff;
+    font-weight: 300;
+    padding: 0px;
+    margin: 0px;
+    line-height: 130%;
+}

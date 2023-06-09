@@ -2,7 +2,7 @@ import "./SearchResultsList.css";
 
 function SearchResultsList(){
     return (
-        <div class="searchResults_wrapper">
+        <div className="searchResults_wrapper">
             <p>Hello</p>
         </div>
     );

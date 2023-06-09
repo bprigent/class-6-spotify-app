@@ -10,6 +10,7 @@ import SpotifyAuth from "./SpotifyAuth";
 
 // app function
 function App() {
+
   return (
     <div className="App">
       <Nav />

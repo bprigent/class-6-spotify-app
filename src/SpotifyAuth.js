@@ -37,9 +37,9 @@ function SpotifyAuth () {
     // return JSX element depending on presence of token
     return (
         <>
-        {token 
-            ? <button onClick={logout}>Log me out</button> 
-            : <a className="SpotifyLoginButton" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a>}
+        {!token 
+            ? <a className="SpotifyLoginButton" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a>
+            : <button onClick={logout}>Log me out</button>}
         </>
     );
 

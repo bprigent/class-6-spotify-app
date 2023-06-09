@@ -1,4 +1,4 @@
-import "./Form.css";
+import "./Search.css";
 import {useEffect, useState} from 'react';
 
 import React from 'react';
@@ -6,11 +6,11 @@ import axios from 'axios';
 
 
 
-function Form(){
+function Search(){
 
     //set state variables
-    const [searchKey, setSearchKey] = useState("")
-    const [songs, setSongs] = useState([])
+    const [searchKey, setSearchKey] = useState("");
+    const [songs, setSongs] = useState([]);
     //get tokent from local storage
     const token = window.localStorage.getItem("token");
 
@@ -39,7 +39,7 @@ function Form(){
                 <br/>
             </div>
         ))
-    }
+    };
 
     return (
         <div>
@@ -52,4 +52,4 @@ function Form(){
     );
 };
 
-export default Form;
+export default Search;

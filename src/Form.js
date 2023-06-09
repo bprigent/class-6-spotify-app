@@ -7,14 +7,14 @@ import axios from 'axios';
 
 
 function Form(){
+
     //set state variables
     const [searchKey, setSearchKey] = useState("")
     const [songs, setSongs] = useState([])
     //get tokent from local storage
     const token = window.localStorage.getItem("token");
 
-
-    const searchSongs = async (e) => {
+    async function SearchSongs (e) {
         e.preventDefault()
         const {data} = await axios.get("https://api.spotify.com/v1/search", {
             headers: {
@@ -26,9 +26,9 @@ function Form(){
                 limit: "30"
             }
         })
-    
         setSongs(data.tracks.items)
     };
+
 
     const renderSongs = () => {
         return songs.map(track => (
@@ -43,7 +43,7 @@ function Form(){
 
     return (
         <div>
-            <form onSubmit={searchSongs} className="formWrapper">
+            <form onSubmit={SearchSongs} className="formWrapper">
                 <input className="form-text-input" placeholder="Type a song..." type="text" onChange={e => setSearchKey(e.target.value)}/>
                 <input className="form-button-input" type="submit" value="Search"/>
             </form>

@@ -1,5 +1,5 @@
-import "./Search.css";
 import {useEffect, useState} from 'react';
+import Form from './Form';
 
 import React from 'react';
 import axios from 'axios';
@@ -40,13 +40,13 @@ function Search(){
             </div>
         ))
     };
+    
+    //Get text value inside input
+    const getInputValue = (e) => setSearchKey(e.target.value);
 
     return (
         <div>
-            <form onSubmit={SearchSongs} className="formWrapper">
-                <input className="form-text-input" placeholder="Type a song..." type="text" onChange={e => setSearchKey(e.target.value)}/>
-                <input className="form-button-input" type="submit" value="Search"/>
-            </form>
+            <Form handleTypeInInput={getInputValue} handleSubmit={SearchSongs} />
             <div>{renderSongs()}</div>
         </div> 
     );

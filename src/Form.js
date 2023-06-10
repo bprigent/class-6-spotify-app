@@ -6,7 +6,7 @@ function Form({handleSubmit, handleTypeInInput}){
 
     return (
         <form onSubmit={handleSubmit} className="formWrapper">
-            <input className="form-text-input" placeholder="Type a song..." type="text" onChange={handleTypeInInput}/>
+            <input required className="form-text-input" placeholder="Type a song..." type="text" onChange={handleTypeInInput}/>
             <BtnInputWhite copy="Submit" />
         </form>
     );

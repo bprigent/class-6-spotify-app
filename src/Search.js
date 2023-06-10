@@ -35,6 +35,7 @@ function Search(){
 
         //change css class of container to show search on top
         document.getElementById("AppCol1").style.justifyContent = "flex-start";
+        document.getElementById("NoResults").style.display = "none";
 
     };
 
@@ -52,6 +53,7 @@ function Search(){
             setSongs([])
             //change css to center div element
             document.getElementById("AppCol1").style.justifyContent = "center";
+            document.getElementById("NoResults").style.display = "block";
         }
         //set text value to enable search
         setSearchKey(element.target.value)
@@ -60,7 +62,8 @@ function Search(){
     return (
         <>
             <Form handleTypeInInput={getInputValue} handleSubmit={SearchSongs} />
-            {!searchKey ? <p>No results</p> : <div>{renderSongs()}</div>}
+            <p id="NoResults">No results</p>
+            <div>{renderSongs()}</div>
         </>
             
     );

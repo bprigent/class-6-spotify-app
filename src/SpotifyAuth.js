@@ -1,5 +1,6 @@
 //useEffect helps check the token after the user is logedin successfully, useState is used to store the value found in the URL in variables
 import {useEffect, useState} from 'react';
+import {BtnLinkGreen, BtnGrey} from "./Buttons";
 
 // spotify data 
 const CLIENT_ID = "955dcd7386bd4ce4970a2944f45e356e";
@@ -23,9 +24,7 @@ function SpotifyAuth () {
             window.location.hash = ""
             window.localStorage.setItem("token", token)
         }
-
         setToken(token)
-
     }, [])
 
     //logout function
@@ -38,8 +37,8 @@ function SpotifyAuth () {
     return (
         <>
         {!token 
-            ? <a className="SpotifyLoginButton" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a>
-            : <button onClick={logout}>Log me out</button>}
+            ? <BtnLinkGreen copy="Login" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}/>
+            : <BtnGrey handleClick={logout} copy="Logout"/>}
         </>
     );
 

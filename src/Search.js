@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import Form from './Form';
 import SongCard from './SongCard';
+import {FontH1, FontH2} from './Fonts';
 
 import React from 'react';
 import axios from 'axios';
@@ -45,6 +46,7 @@ function Search(){
     return (
         <div>
             <Form handleTypeInInput={getInputValue} handleSubmit={SearchSongs} />
+            <FontH2 copy="Search results"/>
             <div>{renderSongs()}</div>
         </div> 
     );

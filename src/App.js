@@ -5,7 +5,6 @@ import './App.css';
 import Nav from './Nav';
 import {FontH1, FontH2} from './Fonts';
 import Search from "./Search";
-import SpotifyAuth from "./SpotifyAuth";
 
 // app function
 function App() {
@@ -16,7 +15,6 @@ function App() {
       <div className='appBody'>
         <div className='AppCol1'>
           <div className='AppCol1-inner_wrapper'>
-            <SpotifyAuth />
             <FontH1 copy="Search a song" />
             <Search />
           </div>

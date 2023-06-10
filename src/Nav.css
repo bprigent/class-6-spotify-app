@@ -13,3 +13,8 @@
     color: #ffffff;
     font-size: 18px;
 }
+
+.LoginSystemWrapper {
+    position: absolute;
+    right: 16px;
+}

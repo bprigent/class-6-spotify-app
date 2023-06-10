@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import Form from './Form';
+import SongCard from './SongCard';
 
 import React from 'react';
 import axios from 'axios';
@@ -11,9 +12,11 @@ function Search(){
     //set state variables
     const [searchKey, setSearchKey] = useState("");
     const [songs, setSongs] = useState([]);
-    //get tokent from local storage
+
+    //get token from local storage
     const token = window.localStorage.getItem("token");
 
+    //Search song in Spotify database
     async function SearchSongs (e) {
         e.preventDefault()
         const {data} = await axios.get("https://api.spotify.com/v1/search", {
@@ -29,15 +32,10 @@ function Search(){
         setSongs(data.tracks.items)
     };
 
-
+    //Create song result list
     const renderSongs = () => {
         return songs.map(track => (
-            <div key={track.id}>
-                {track.name} <br/>
-                {track.artists[0].name}
-                <br/>
-                <br/>
-            </div>
+            <SongCard object={track}/>
         ))
     };
     

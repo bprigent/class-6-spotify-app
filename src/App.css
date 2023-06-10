@@ -13,7 +13,9 @@
   display: flex;
   flex-flow: row;
   color: white;
+  overflow: hidden;
 }
+
 
 
 
@@ -22,9 +24,24 @@
 
 .AppCol1 {
   flex: 1;
+  
+  padding: 64px;
   background-color: rgb(0, 0, 0);
   border-right: 1px solid #484848;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  overflow: scroll;
+  
 }
+
+
+
+
+
 
 .AppCol2 {
   width: 420px;
@@ -34,14 +51,5 @@
   flex-direction: column;
   align-items: flex-start; 
 }
-
-.AppCol1-inner_wrapper {
-  padding: 64px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
 
 

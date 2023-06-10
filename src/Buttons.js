@@ -11,3 +11,9 @@ export function BtnGrey(props) {
         <button className="BtnGrey" onClick={props.handleClick} >{props.copy}</button>
     );
 };
+
+export function BtnInputWhite(props) {
+    return (
+        <input className="BtnWhite" type="submit" value={props.copy}/>
+    );
+};

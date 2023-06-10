@@ -1,7 +1,7 @@
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import Form from './Form';
 import SongCard from './SongCard';
-import {FontH1, FontH2} from './Fonts';
+import {FontH2} from './Fonts';
 
 import React from 'react';
 import axios from 'axios';
@@ -30,7 +30,12 @@ function Search(){
                 limit: "30"
             }
         })
+        //add data to song object
         setSongs(data.tracks.items)
+
+        //change css class of container to show search on top
+        document.getElementById("AppCol1").style.justifyContent = "flex-start";
+
     };
 
     //Create song result list
@@ -41,15 +46,25 @@ function Search(){
     };
     
     //Get text value inside input
-    const getInputValue = (e) => setSearchKey(e.target.value);
+    const getInputValue = (element) => {
+        //clear songs array of the input is cleared
+        if (!element.target.value) {
+            setSongs([])
+            //change css to center div element
+            document.getElementById("AppCol1").style.justifyContent = "center";
+        }
+        //set text value to enable search
+        setSearchKey(element.target.value)
+    };
 
     return (
-        <div>
+        <>
             <Form handleTypeInInput={getInputValue} handleSubmit={SearchSongs} />
-            <FontH2 copy="Search results"/>
-            <div>{renderSongs()}</div>
-        </div> 
+            {!searchKey ? <p>No results</p> : <div>{renderSongs()}</div>}
+        </>
+            
     );
 };
 
 export default Search;
+

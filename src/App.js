@@ -13,11 +13,9 @@ function App() {
     <div className="App">
       <Nav />
       <div className='appBody'>
-        <div className='AppCol1'>
-          <div className='AppCol1-inner_wrapper'>
-            <FontH1 copy="Search a song" />
-            <Search />
-          </div>
+        <div id="AppCol1" className='AppCol1'>
+          <FontH1 copy="Search a song" />
+          <Search />
         </div>
         <div className='AppCol2'>
           <FontH2 copy="Your playlist" />
@@ -27,4 +25,8 @@ function App() {
   );
 };
 
+
+
 export default App;
+
+

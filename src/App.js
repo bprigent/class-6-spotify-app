@@ -5,6 +5,7 @@ import './App.css';
 import Nav from './Nav';
 import {FontH1, FontH2} from './Fonts';
 import Search from "./Search";
+import { AddToPlaylist } from './AddToPlaylist';
 
 // app function
 function App() {
@@ -19,13 +20,12 @@ function App() {
         </div>
         <div className='AppCol2'>
           <FontH2 copy="Your playlist" />
+          <AddToPlaylist />
         </div>
       </div>
     </div>
   );
 };
-
-
 
 export default App;
 

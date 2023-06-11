@@ -1,11 +1,11 @@
-.SongCardParentWrapper {
+.SongCardWrapper {
     padding: 16px;
-    border: 1px solid #5f5f5f;
+    border-bottom: 1px solid #5f5f5f;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     width: 100%;
-    width: 448px;
+    width: 520px;
     text-align: left;
 }
 
@@ -24,4 +24,20 @@
 
     padding: 0px;
     margin: 0px;
+}
+
+.SongCards-ParentWrapper {
+    border-top: 1px solid #5f5f5f;
+    border-left: 1px solid #5f5f5f;
+    border-right: 1px solid #5f5f5f;
+}
+
+.SongCardImage {
+    border-radius: 2px;
+    margin-right: 16px;
+    opacity: 66%;
+}
+
+.SongCardTextWrapper {
+    flex:1;
 }

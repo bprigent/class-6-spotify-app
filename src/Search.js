@@ -62,12 +62,13 @@ function Search(){
     return (
         <>
             <Form handleTypeInInput={getInputValue} handleSubmit={SearchSongs} />
-            <p id="NoResults">No results</p>
-            <div>{renderSongs()}</div>
+            <p id="NoResults">No results, search something...</p>
+            <div className="SongCards-ParentWrapper" >{renderSongs()}</div>
         </>
             
     );
 };
+
 
 export default Search;
 

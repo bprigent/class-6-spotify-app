@@ -45,5 +45,4 @@ function SpotifyAuth () {
 };
 
 
-
 export default SpotifyAuth;

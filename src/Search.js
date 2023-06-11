@@ -8,7 +8,7 @@ import axios from 'axios';
 
 
 
-function Search(){
+function Search({addSongToPlaylist}){
 
     //set state variables
     const [searchKey, setSearchKey] = useState("");
@@ -42,7 +42,7 @@ function Search(){
     //Create song result list
     const renderSongs = () => {
         return songs.map(track => (
-            <SongCard object={track}/>
+            <SongCard addSongToPlaylist={addSongToPlaylist} object={track}/>
         ))
     };
     

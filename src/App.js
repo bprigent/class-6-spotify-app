@@ -16,18 +16,19 @@ function App() {
   // here is the list of song id of my playlist
   const [playList, setPlayList] = useState([
       {
-          id:"3sl4dcqSwxHVnLfqwF2jly"
+        id:"3sl4dcqSwxHVnLfqwF2jly"
+      },
+      {
+        id:"3sl4dcqSwxHVnLfqwF2jly"
       }
   ]);
 
   // here is a function to add a song to a playlist, it is now available in search
   const addSongToPlaylist = (passedID) => {
-    
     //create a new ID object, formated so that 
     const newID = {
       id: passedID
     };
-
     // update the playlist with the ID.
     setPlayList([newID, ...playList])
   };

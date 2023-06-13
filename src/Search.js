@@ -1,7 +1,6 @@
 import {useState} from 'react';
 import Form from './Form';
-import SongCard from './SongCard';
-import {FontH2} from './Fonts';
+import {SongCard} from './SongCard';
 
 import React from 'react';
 import axios from 'axios';

@@ -2,13 +2,14 @@ import {useState} from 'react';
 import Form from './Form';
 import {SongCard} from './SongCard';
 import "./Search.css";
+import {LoginModal} from "./LoginModal.js";
 
 import React from 'react';
 import axios from 'axios';
 
 
 
-function Search({addSongToPlaylist, IsSongAlreadyInPlayList}){
+function Search({showLoginModal, addSongToPlaylist, IsSongAlreadyInPlayList}){
 
     //set state variables
     const [searchKey, setSearchKey] = useState("");
@@ -19,23 +20,34 @@ function Search({addSongToPlaylist, IsSongAlreadyInPlayList}){
 
     //Search song in Spotify database
     async function SearchSongs (e) {
-        e.preventDefault()
-        const {data} = await axios.get("https://api.spotify.com/v1/search", {
-            headers: {
-                Authorization: `Bearer ${token}`
-            },
-            params: {
-                q: searchKey,
-                type: "track",
-                limit: "30"
-            }
-        })
-        //add data to song object
-        setSongs(data.tracks.items)
+        //lets try to search the song, we do this to catch 401 errors and ask users to login 
+        try {
+            e.preventDefault()
+            const {data} = await axios.get("https://api.spotify.com/v1/search", {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                },
+                params: {
+                    q: searchKey,
+                    type: "track",
+                    limit: "30"
+                }
+            })
+            //add data to song object
+            setSongs(data.tracks.items)
 
-        //change css class of container to show search on top
-        document.getElementById("AppCol1").style.justifyContent = "flex-start";
-        document.getElementById("NoResults").style.display = "none";
+            //change css class of container to show search on top
+            document.getElementById("AppCol1").style.justifyContent = "flex-start";
+            document.getElementById("NoResults").style.display = "none";
+        
+        //now we are doing someting with the error
+        } catch (error) {
+            console.error(error);
+            if (error.response && error.response.status === 401) {
+                // Display your JSX login element
+                showLoginModal();
+            }
+        }
 
     };
 

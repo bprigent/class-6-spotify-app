@@ -1,5 +1,5 @@
 import "./SongCard.css";
-import {BtnGreySmall, BtnIconClose} from "./Buttons"
+import {BtnGreySmall, BtnIconDelete} from "./Buttons"
 //import {updatePlaylist} from "./AddToPlaylist";
 
 
@@ -26,7 +26,7 @@ export function PlaylistSongCard({deleteSongFromPlaylist, object}) {
                 <p className="SongCardTitle" >{object.name}</p>
                 <p className="SongCardArtist" >{object.artist}</p>
             </div>
-            <BtnIconClose handleClick={() => deleteSongFromPlaylist(object.id)} />
+            <BtnIconDelete handleClick={() => deleteSongFromPlaylist(object.id)} />
         </div>
     );
 };

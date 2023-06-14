@@ -7,6 +7,12 @@ export function BtnLinkGreen(props) {
     );
 };
 
+export function BtnLinkGreenLarge(props) {
+    return (
+        <a className="BtnGreenLarge" href={props.href}>{props.copy}</a>
+    );
+};
+
 export function BtnGrey(props) {
     return (
         <button className="BtnGrey" onClick={props.handleClick} >{props.copy}</button>
@@ -22,6 +28,12 @@ export function BtnInputWhite(props) {
 export function BtnGreySmall(props) {
     return (
         <button id={props.id} className="BtnGreySmall" onClick={props.handleClick} >{props.copy}</button>
+    );
+};
+
+export function BtnIconDelete(props) {
+    return (
+        <button id={props.id} className="BtnIconDelete" onClick={props.handleClick}></button>
     );
 };
 

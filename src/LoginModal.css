@@ -1,0 +1,23 @@
+.LoginModal {
+    width: 100vw;
+    height: 100vh;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1000;
+    position: absolute;
+}
+
+.H2Padding {
+    padding: 24px;
+}
+
+.LoginModal_CloseBtnWrapper {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}

@@ -7,9 +7,18 @@ import RenderPlayList from "./RenderPlayList";
 import Nav from './Nav';
 import {FontH1, FontH2} from './Fonts';
 import Search from "./Search";
+import { LoginModal } from './LoginModal';
 
 // app function
 function App() {
+
+  // Variable for showing the login modale
+  const [showLogin, setShowLogin] = useState(false);
+
+  // The showLoginModal function would simply set this state to true
+  function showLoginModal() {
+    setShowLogin(true);
+  }
 
   // here is the list of song id of my playlist, starts empty
   const [playList, setPlayList] = useState([]);
@@ -47,13 +56,14 @@ function App() {
       <div className='appBody'>
         <div id="AppCol1" className='AppCol1'>
           <FontH1 copy="Search a song" />
-          <Search IsSongAlreadyInPlayList={IsSongAlreadyInPlayList} addSongToPlaylist={addSongToPlaylist}/>
+          <Search showLoginModal={showLoginModal} IsSongAlreadyInPlayList={IsSongAlreadyInPlayList} addSongToPlaylist={addSongToPlaylist}/>
         </div>
         <div className='AppCol2'>
           <FontH2 copy="Your playlist" />
           <RenderPlayList arr={playList} deleteSongFromPlaylist={deleteSongFromPlaylist} />
         </div>
       </div>
+      {showLogin && <LoginModal onClose={() => setShowLogin(false)}/>}
     </div>
   );
 };

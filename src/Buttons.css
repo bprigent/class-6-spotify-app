@@ -10,6 +10,18 @@
     cursor:pointer;
 }
 
+.BtnGreenLarge {
+    color: rgb(0, 0, 0);
+    background-color: rgb(26, 214, 95);;
+    font-weight: 400;
+    font-size: 18px;
+    padding: 12px 24px 12px 24px;
+    border-radius: 4px;
+    border: 0px;
+    text-decoration: none;
+    cursor:pointer;
+}
+
 .BtnGrey {
     color: rgb(255, 255, 255);
     background-color: #4D4D4D;
@@ -47,7 +59,7 @@
     cursor:pointer;
 }
 
-.BtnIconClose {
+.BtnIconDelete {
     height: 24px;
     width: 24px;
     color: rgb(255, 255, 255);
@@ -62,7 +74,17 @@
     opacity: 0.6;
 }
 
-.iconImage {
-    height: 24px;
-    width: 24px;
+.BtnIconClose {
+    height: 40px;
+    width: 40px;
+    color: rgb(255, 255, 255);
+    background-color: #292929;
+    border-radius: 4px;
+    border: 0px;
+    cursor:pointer;
+    background-image: url(./resources/cancel.png);
+    background-size: 28px;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.6;
 }

@@ -1,4 +1,5 @@
 import "./Buttons.css"
+import "./resources/delete.png"
 
 export function BtnLinkGreen(props) {
     return (
@@ -21,5 +22,11 @@ export function BtnInputWhite(props) {
 export function BtnGreySmall(props) {
     return (
         <button id={props.id} className="BtnGreySmall" onClick={props.handleClick} >{props.copy}</button>
+    );
+};
+
+export function BtnIconClose(props) {
+    return (
+        <button id={props.id} className="BtnIconClose" onClick={props.handleClick}></button>
     );
 };

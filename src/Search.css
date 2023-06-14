@@ -1,0 +1,11 @@
+.SongCards-ParentWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 540px;
+}
+
+#NoResults {
+    color: rgb(94, 94, 94);
+    font-weight: 400;
+}

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import {PlaylistSongCard} from './SongCard';
+import "./RenderPlaylist.css";
 
 
 
 //this function takes the array of song IDs stored in APP.js and finds the relevant info from the spotify database. then show that info.
-function RenderPlayList ({arr}) {
+function RenderPlayList ({arr, deleteSongFromPlaylist}) {
 
     //get token from local storage
     const token = window.localStorage.getItem("token");
@@ -52,13 +53,13 @@ function RenderPlayList ({arr}) {
 
     // Render
     if (!finalArray.length) {
-        return <div>Loading...</div>
+        return <div className="emptyPlayList">No songs in your playlist yet</div>
     }
 
     return (
-        <div>
+        <div className="PlaylistSongCardWrapper">
             {finalArray.map((obj) => (
-                <PlaylistSongCard object={obj}/>
+                <PlaylistSongCard deleteSongFromPlaylist={deleteSongFromPlaylist} object={obj}/>
             ))}
         </div>
     );

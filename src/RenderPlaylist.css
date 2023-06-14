@@ -1,0 +1,16 @@
+.PlaylistSongCardWrapper {
+    margin-top: 16px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.emptyPlayList {
+    margin-top: 12px;
+    width: 100%;
+    text-align: left;
+
+    color: rgb(94, 94, 94);
+    font-weight: 400;
+}

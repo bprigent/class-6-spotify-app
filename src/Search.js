@@ -1,13 +1,14 @@
 import {useState} from 'react';
 import Form from './Form';
 import {SongCard} from './SongCard';
+import "./Search.css";
 
 import React from 'react';
 import axios from 'axios';
 
 
 
-function Search({addSongToPlaylist}){
+function Search({addSongToPlaylist, IsSongAlreadyInPlayList}){
 
     //set state variables
     const [searchKey, setSearchKey] = useState("");
@@ -40,9 +41,15 @@ function Search({addSongToPlaylist}){
 
     //Create song result list
     const renderSongs = () => {
-        return songs.map(track => (
-            <SongCard addSongToPlaylist={addSongToPlaylist} object={track}/>
-        ))
+        return (
+            <div className="SongCards-ParentWrapper" >
+                {songs.map(track => (
+                    <SongCard IsSongAlreadyInPlayList={IsSongAlreadyInPlayList} addSongToPlaylist={addSongToPlaylist} object={track}/>
+                ))}
+            </div>
+        );
+        
+        
     };
     
     //Get text value inside input
@@ -62,7 +69,7 @@ function Search({addSongToPlaylist}){
         <>
             <Form handleTypeInInput={getInputValue} handleSubmit={SearchSongs} />
             <p id="NoResults">No results, search something...</p>
-            <div className="SongCards-ParentWrapper" >{renderSongs()}</div>
+            {renderSongs()}
         </>
             
     );

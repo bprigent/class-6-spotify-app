@@ -5,7 +5,7 @@ import {FontH2} from "./Fonts"
 export function LoginModal({onClose}) {
     //data needed for login button
     const CLIENT_ID = "955dcd7386bd4ce4970a2944f45e356e";
-    const REDIRECT_URI = "http://localhost:3000";
+    const REDIRECT_URI = "https://prige-spotify-app.netlify.app/";
     const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
     const RESPONSE_TYPE = "token";
 
